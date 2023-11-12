@@ -4,4 +4,4 @@ Builds the latest arm64 [Caddy](https://caddyserver.com/), with the [Cloudflare 
 
 - Skips pre-existing release versions
 - Runs daily
-- Manually activate (here)[https://github.com/bryanwtan/caddy_arm64/actions/workflows/caddy.yml]
+- Manually activate [here](https://github.com/bryanwtan/caddy_arm64/actions/workflows/caddy.yml)
