@@ -1,0 +1,35 @@
+name: Caddy
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup go
+        uses: actions/setup-go@v4.1.0
+        with:
+          go-version: 'oldstable'
+      - name: Get xcaddy
+        run: |
+          go version
+          go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
+      - name: Build binary
+        run: |
+          xcaddy build --with github.com/caddy-dns/cloudflare
+          chmod +x caddy
+      - name: Get binary version
+        id: caddy_version
+        run: |
+          CADDY=$(./caddy version)
+          vr="${CADDY}"
+          echo "::set-output name=tag::$( echo $vr | head -n1 | cut -d " " -f1 )"
+      - name: Create release
+        id: create_release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: caddy
+          tag: "${{ steps.caddy_version.outputs.tag }}"
