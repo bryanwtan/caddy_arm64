@@ -32,5 +32,3 @@ jobs:
         with:
           artifacts: "./caddy"
           tag: "${{ steps.caddy_version.outputs.tag }}"
-
-          
