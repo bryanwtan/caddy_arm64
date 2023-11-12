@@ -19,7 +19,7 @@ jobs:
           go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
       - name: Build binary
         run: |
-          xcaddy build --with github.com/caddy-dns/cloudflare
+          GOARCH=arm64 xcaddy build --with github.com/caddy-dns/cloudflare
           chmod +x caddy
       - name: Get binary version
         id: caddy_version
