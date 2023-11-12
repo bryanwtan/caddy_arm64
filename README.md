@@ -1,4 +1,4 @@
-# Caddy arm64 and Cloudflare
+# caddy arm64 and cloudflare
 
 Builds the latest arm64 [Caddy](https://caddyserver.com/), with the [Cloudflare plugin](https://caddyserver.com/docs/modules/dns.providers.cloudflare)
 
