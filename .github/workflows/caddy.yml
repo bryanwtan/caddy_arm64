@@ -24,7 +24,7 @@ jobs:
       - name: Get binary version
         id: caddy_version
         run: |
-          v=$(curl -sL https://api.github.com/repos/caddyserver/caddy/releases/latest | grep -Po "(?<=\"tag_name\": \").*(?=\")")
+          v=$(curl -sL https://api.github.com/repos/caddyserver/caddy/releases/latest | jq -r ".tag_name")
           echo "tag=${v}" >> $GITHUB_OUTPUT
       - name: Create release
         id: create_release
