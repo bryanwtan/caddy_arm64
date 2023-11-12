@@ -1,6 +1,6 @@
 # caddy_arm64
 
-Builds the latest arm64 [Caddy](https://caddyserver.com/), with the [Cloudflare plugin](https://caddyserver.com/docs/modules/dns.providers.cloudflare).
+Builds the latest arm64 [Caddy](https://caddyserver.com/), with the [Cloudflare plugin](https://caddyserver.com/docs/modules/dns.providers.cloudflare)
 
 - Skips pre-existing release versions
 - Runs daily
