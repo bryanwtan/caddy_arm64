@@ -28,7 +28,7 @@ jobs:
           echo "tag=${v}" >> $GITHUB_OUTPUT
       - name: Create release
         id: create_release
-        uses: ncipollo/release-action@v1.13.0
+        uses: ncipollo/release-action@v1.14.0
         with:
           artifacts: "./caddy"
           tag: "${{ steps.caddy_version.outputs.tag }}"
